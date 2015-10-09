@@ -125,12 +125,9 @@
   handleResponse = function(response){    
     var repoTemplate = $('#repo-template').html();
     $.each(response, function(i, e){
-      console.log(e);
       $('tbody.repos').append(_.template(repoTemplate, e));
     })
     $('.repos-count').append("REPOSITORIES ("+response.length + ")");
-    console.log(commits);
-    
   }
   $.get('https://api.github.com/orgs/knowarth-technologies/repos', handleResponse);
 </script>
